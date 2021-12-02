@@ -38,7 +38,7 @@ p <- christmas_songs %>%
       scale_y_reverse(limits = c(100, 1), breaks = c(1, 10, 20, 40, 30, 50, 60, 70, 80, 90, 100)) + #Reversing y-axis and customising breaks
       scale_x_continuous(limits = c(1955,2018), breaks = seq(1955, 2018, 5), expand = c(0, 0)) +  #Customising x-axis
       xlab("Year") +   #Customising axis labels
-      ylab("Peak Chart Position") +
+      ylab("Best Chart Position") +
       labs(title="Christmas Hits") +   #Adding plot title
       labs(caption = "Data source: Kaggle")   #Adding caption
 
