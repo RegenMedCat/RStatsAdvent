@@ -29,7 +29,6 @@ p <- christmas_songs %>%
       theme(plot.margin = margin(1, 1, 1, 1, "cm"),   #Changing plot margins
             text = element_text(family="Snow", size= 72, colour="white"),  #Using custom Google fonts
             plot.title = element_text(hjust=0.5,  size=92),
-            legend.text = element_text(size=44, family="Quicksand"),
             axis.text = element_text(colour="white", family="Quicksand"),
             axis.line = element_line(colour = "white"), #Changing axis line and tick colours
             axis.ticks = element_line(colour = "white"),
