@@ -10,7 +10,7 @@ font_add_google("Bigelow Rules", "Bigelow")
 
 
 #Importing data
-dat <- read.csv("read.csv("https://raw.githubusercontent.com/RegenMedCat/RStatsAdvent/Day 4/Movies.csv")
+dat <- read.csv("https://raw.githubusercontent.com/RegenMedCat/RStatsAdvent/main/Day%204/Movies.csv")
 
 
 #Checking data
@@ -31,9 +31,10 @@ p <- dat %>%
   theme_void() +  #Removing grid and axes
   theme(axis.text.x = element_blank(),  #Removing x-axis labels
         plot.margin = margin(1, 1, 1, 1, "cm"),
-        plot.title = element_text(family = "Bigelow", hjust = 0.5,  size = 150)) +
-  ggtitle("Top 10 Highest Grossing Christmas Movies ($ millions)")  #Adding title
-
+        plot.title = element_text(family = "Bigelow", hjust = 0.5,  size = 150),
+        plot.caption = element_text(family = "Bigelow", size=100,  face = "italic")) +
+  ggtitle("Top 10 Highest Grossing Christmas Movies ($ millions)") +  #Adding title
+  labs(caption = "Data source: Wikipedia")   #Adding caption
 
 p
 
