@@ -12,9 +12,9 @@ font_add_google("Lobster", "Lobster")
 #Custom palette
 pal <- c("#f5a045", "#f2f545", "#f28715", "#b16009", "#f7f98e", "#fdfeea")
 
-#Importing data
-dat <- read.csv("Foods.csv")
 
+#Importing data
+dat <- read.csv("https://raw.githubusercontent.com/RegenMedCat/RStatsAdvent/main/Day%205/Foods.csv")
 
 #Checking data
 view(dat)
