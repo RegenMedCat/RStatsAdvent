@@ -46,7 +46,7 @@ p <- christmas_songs %>%
   scale_shape_manual(values = c(19, 5, 8, 1),  #Customising point shapes
                      limits = c("80s", "90s", "2000s", "2010s")) +  #Reordering legend
   xlab("Weeks in the Charts") +   #Customising axis labels
-  ylab("Chart Position") +
+  ylab("Peak Chart Position") +
   labs(title = "Christmas Hits") +   #Adding plot title
   labs(caption = "Data source: Kaggle")   #Adding caption
 
