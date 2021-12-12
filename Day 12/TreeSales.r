@@ -15,9 +15,11 @@ font_add_google("Cookie", "Cookie")
 #Plotting bar plot of tree sales by year
 p <- dat %>%
   mutate(Number.of.trees.sold = Number.of.trees.sold/10^6) %>%  #Converting to millions
+  group_by(Year) %>%
+  mutate(label_y = cumsum(Number.of.trees.sold))  %>% #Calculating cumulative sum of trees sold for bar plot labels
   ggplot(aes(x = Year, y = Number.of.trees.sold, fill = Type.of.tree)) + 
   geom_bar(position = "stack", stat = "identity") +   #Making bars stacked
-  geom_text(aes(label = Number.of.trees.sold), vjust = -1, family = "Cookie", colour = "white", size = 15) +  #Adding labels to bars
+  geom_text(aes(y = label_y, label = Number.of.trees.sold), vjust = 1.75, family = "Cookie", colour = "white", size = 15) +  #Adding labels to bars
   theme_classic(base_size = 20) +  #Increasing base size, removing grid lines
   theme(text = element_text(family = "Cookie", size = 80, colour = "white"),  #Using custom Google fonts
         axis.text = element_text(colour = "white"),
@@ -38,8 +40,8 @@ p <- dat %>%
   ylab("Trees Sold (Millions)") +
   labs(title = "US Christmas Tree Sales") +   #Adding plot title
   labs(caption = "Data source: data.world")   #Adding caption
-  
-  p
+
+p
 
   
 #Saving plot
