@@ -15,7 +15,7 @@ dat <- read.csv("https://raw.githubusercontent.com/RegenMedCat/RStatsAdvent/main
 #Creating new data frame to store angles for labels
 label_data <- dat %>%
               group_by(Pie) %>%
-              summarise(max = max(Rating)) %>%
+              summarise(max = max(Rating)) %>%  #Did this so there's only one row per pie brand for plotting labels later
               mutate(Angle = case_when(Pie == "Sainsbury's" ~ "72",
                                        Pie == "Tesco" ~ "18",
                                        Pie == "Coop" ~ "-18",
