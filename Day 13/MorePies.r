@@ -9,6 +9,7 @@ font_add_google("Cookie", "Cookie")
 
 
 #Importing data
+#Original data from: https://www.moneysavingexpert.com/deals/deals-hunter/2014/12/mince-pie-taste-test/
 dat <- read.csv("https://raw.githubusercontent.com/RegenMedCat/RStatsAdvent/main/Day%213/MorePies.csv")
 
 
