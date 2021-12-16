@@ -51,7 +51,13 @@ p <- dat2 %>%
 
 
 p + geom_text(x = 86, y = 26.5, label = lm_eqn(dat2), parse = TRUE, 
-              family = "BS", size = 15, colour = "#ecdeb9")  #Adding regression equation
+              family = "BS", size = 15, colour = "#ecdeb9") +  #Adding regression equation
+  geom_text(data = subset(dat2, Per.kg > 31.5),    #Adding labels for top and bottom rated
+            aes(x = Score, y = Per.kg, label = Brand),
+            family = "BS", size = 15, colour = "#ecdeb9", nudge_y = 2, nudge_x = 0) +
+geom_text(data = subset(dat2, Per.kg < 5),    #Adding labels for most and least expensive
+          aes(x = Score, y = Per.kg, label = Brand),
+          family = "BS", size = 15, colour = "#ecdeb9", nudge_y = -2, nudge_x = 0)
 
 
 #Saving plot
