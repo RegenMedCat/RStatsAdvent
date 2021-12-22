@@ -4,6 +4,10 @@ library(tidyverse)
 library(showtext)
 
 
+#Importing data
+dat <- read.csv("https://raw.githubusercontent.com/RegenMedCat/RStatsAdvent/main/Day%2021/No1s.csv")
+
+
 #Adding Google fonts
 showtext_auto()
 font_add_google("Dancing Script", "Dance")
@@ -46,4 +50,3 @@ p
 
 #Saving plot
 ggsave("No1s Weeks.png", height = 5, width = 20, units = "in", dpi = 300)
-
